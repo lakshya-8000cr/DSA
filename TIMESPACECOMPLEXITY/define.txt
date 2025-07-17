@@ -1,0 +1,13 @@
+1 . In simple language time complexity is how much time your code will take and space complexity is how much space your code will take 
+2 . to calculate time complexity for recurisive fucntions there is a formula 
+
+
+{ Time complexity = Number of recurisive calls * work in each call = O(n);
+Space complexity = Depth of Recursive tree * memory in each call; }
+
+
+3 . In Space complexity there is one thing that also counts which is :-
+
+# Input Storage (not always counted)
+# Auxiliary space (extra arrays, variables)
+# Call stack (for recursive calls)
