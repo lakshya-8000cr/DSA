@@ -6,7 +6,7 @@ class Solution {
     public:
 
     int Occurence(vector<int>& nums,int n, int x){
-        int count = 0;
+        int count = 1;
         for(int i=0; i<n-1; i++){
           if(nums[i]==x){
             count++;
