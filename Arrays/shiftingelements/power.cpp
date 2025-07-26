@@ -2,7 +2,7 @@
 using namespace std ;
 
 int power(int base , int expo){
-    int result = 1gti  ;
+    int result = 1 ;
 
     while((expo--) != 0){
         result *= base;
