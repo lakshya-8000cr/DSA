@@ -70,7 +70,8 @@ int main() {
 
     Solution obj;
     cout << obj.LastOccurence(arr, n, tar)<<" ";
-    cout << obj.FirstOccurence(arr , n ,tar);
+    cout << obj.FirstOccurence(arr , n ,tar)<<endl;
+    cout <<"Total Occurence: "<<(( obj.LastOccurence(arr, n, tar) - obj.FirstOccurence(arr , n ,tar) ) + 1); // this is the easoest formula for total number of occurence ( last index - first index) + 1;
 
     return 0;
 }

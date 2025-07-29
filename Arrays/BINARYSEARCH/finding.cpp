@@ -6,27 +6,26 @@ using namespace std ;
 class Solution{ 
     public:
 
-    int BinarySearch( vector<int>&arr , int n , int tar){
-        
+    int BianrySearch(vector<int>&arr , int n , int tar){
         int st = 0;
 
-        int end = n-1 ;
+        int end = n - 1;
 
-        int mid = st + (end - st)/2;
+        int mid = st + (end -st)/2;
+
+        // int ans ;
 
         while(st<=end){
-            if(arr[mid] == tar){
-                return mid ;
+            if(arr[mid]==tar){
+                return mid;
             }
-
-            if(arr[mid]>tar){
+            else if(arr[mid]>tar){
                 end = mid - 1;
             }
             else{
                 st = mid + 1;
             }
-
-            mid = st + (end-st)/2;
+            mid = st + (end - st)/2;
         }
 
         return {};
@@ -46,10 +45,8 @@ int main(){
     int tar;
     cin>>tar;
 
-    sort(arr.begin() , arr.end());
-
     Solution obj; 
-    cout<<obj.BinarySearch(arr , n , tar); // will give sorted array index according to the sorted array 
+    cout<<obj.BianrySearch(arr , n , tar); // will give sorted array index according to the sorted array 
 
     return 0;
 

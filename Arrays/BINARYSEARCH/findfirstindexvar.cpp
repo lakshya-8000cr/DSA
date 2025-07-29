@@ -12,17 +12,17 @@ using namespace std ;
 class Solution {
     public :
 
-    int firstindex(vector<int>&arr , int n , int tar){
-        int st = 0 ;
-        int end = n - 1;
-        int ans = -1 ;
-        
+    pair<int , int>  FirstIndex(vector<int>&arr , int n , int tar){
+        int st = 0;
+        int end = n -1;
+        int first  ;
+        int last ;
+
         while(st<=end){
             int mid = st + (end - st)/2;
-
-            if(arr[mid] > tar){
-                ans = mid;
-                end = mid - 1;
+            if(arr[mid]==tar){
+               first = mid;
+               end = mid - 1;
             }
             else if(arr[mid]>tar){
                 end = mid - 1;
@@ -30,9 +30,33 @@ class Solution {
             else{
                 st = mid + 1;
             }
+            
+            mid = st + (end - st)/2;
         }
 
-        return ans ;
+        st = 0;
+        end = n - 1;
+
+        while(st<=end){
+
+            int mid = st + (end - st)/2;
+
+            if(arr[mid]==tar){
+               last = mid;
+               st = mid + 1;
+            }
+            else if(arr[mid]>tar){
+                end = mid - 1;
+            }
+            else{
+                st = mid + 1;
+            }
+            
+            mid = st + (end - st)/2;
+        }
+
+        return {first,last};
+
     }
 };
 
@@ -47,7 +71,11 @@ int main(){
     int tar ;
     cin>>tar;
 
+    
     Solution obj;
-    cout << obj.firstindex(arr , n , tar);
+
+    pair<int , int>result = obj.FirstIndex(arr , n , tar);
+    cout <<result.first<<endl;
+    cout<<result.second;
     return 0;
 }

@@ -1,32 +1,28 @@
-//position to keep the array sorted 
-
 #include<iostream>
 #include<vector>
-#include<algorithm>
 
 using namespace std ;
 
 class Solution {
-    public :
+    public:
 
-    int firstindex(vector<int>&arr , int n , int tar){
+    int Pivot(vector<int>&arr , int n){
         int st = 0;
         int end = n - 1;
         int mid = st + (end - st)/2;
-        int ans ;
+        // int ans = -1;
 
-        while(st<=end){
-            if(arr[mid]>=tar){
-                ans = mid ;
-                end = mid - 1;
+        while(st<end){
+            if(arr[mid]>=arr[0]){
+                st = mid + 1;
             }
             else{
-                st = mid + 1;
+                end = mid;
             }
             mid = st + (end - st)/2;
         }
 
-        return ans;
+        return st ;
     }
 };
 
@@ -38,10 +34,7 @@ int main(){
         cin>>arr[i];
     }
 
-    int tar ;
-    cin>>tar;
-
     Solution obj;
-    cout << obj.firstindex(arr , n , tar);
+    cout<<obj.Pivot(arr , n);
     return 0;
 }

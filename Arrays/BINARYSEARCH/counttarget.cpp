@@ -8,41 +8,38 @@ class Solution {
     public:
 
     int occurence(vector<int>&arr , int n, int tar){
-        int st = 0;
-        int end = n -1 ;
-        int count = 0;
+         int st = 0;
+         int end = n - 1;
+         int mid = st + (end - st)/2;
+         int count = 0;
 
         while(st<=end){
-            int mid = st + (end - st)/2;
-            if(arr[mid] == tar){
+            if(arr[mid]==tar){
                 count = 1;
 
                 int left = mid - 1;
-                for(int i = left ; i>=0; i--){
-                    if(arr[i] == tar){
-                        count++;
-                    }
-                } // traverse the full array of left side;
+                while(left>=0 && arr[left]==tar){
+                    count++;
+                    left--;
+                }
 
                 int right = mid + 1;
-                for(int i = right ; i<n ;i++){
-                    if(arr[i] == tar){
-                        count++;
-                    }
-                } // traverse the full array rigth side ;
+                while(right<n && arr[right]==tar){
+                    count++;
+                    right++;
+                }
 
-                break ;
+                break;
             }
-
             else if(arr[mid]>tar){
-                end =  mid - 1;
+                    end = mid - 1;
             }
             else{
                 st = mid + 1;
             }
-        }
+         }
 
-        return count;
+         return count; 
     }
 };
 
@@ -62,3 +59,5 @@ int main(){
     cout<<obj.occurence(arr , n , tar);
     return 0 ;
 }
+
+//ise ek aur tarike se kar skate hai 

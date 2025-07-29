@@ -12,7 +12,7 @@ using namespace std ;
 class Solution {
     public :
 
-    pair<int , int> firstindex(vector<int>&arr , int n , int tar){
+    pair<int , int> firstindex(vector<int>&arr , int n , int tar){ 
         int st = 0 ;
         int end = n - 1;
         int ceil = -1 ;
@@ -53,3 +53,5 @@ int main(){
     cout << result.first <<result.second;
     return 0;
 }
+
+//you will all think what is pair in this pair<int , int>
