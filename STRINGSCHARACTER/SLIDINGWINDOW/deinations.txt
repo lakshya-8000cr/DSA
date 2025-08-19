@@ -1,0 +1,17 @@
+whats is sliding window ? 
+Sliding window is concept in which we make window of array then we will slide that window in array or traverse that window ;
+ex = {1 , 2 , 3 , 4 , 5 , 6}
+so lets take the window of two elements ex = {1 , 2} size of window = 2 
+
+now we will traverse the window in examaple array of {1,2,3,4,5,6};
+but how ? we will use two pointers method to traverse ;
+
+step 1 -> we will use L(showcasing left most part starting index ) and R(showcasing right most part , ending index but in start R will be of same as L index);
+
+step 2 -> now lets take example of an array = {1,2,3,4,5,6} find the length of the subarray which has sum <=14 = k;
+
+step 3 -> nw we have Two Pattern of this concept 
+                                           
+Pattern 1 -> Constant Window ;
+Pattern 2 -> Window which will shrink and expand its size according to question ( and mostly questions aise hi solve hote hai) ;
+Pattern 3 -> We have the questions related to the subarray like find number of subarray or the array count of te subarray (in thst case we will use the pattern 3)

@@ -1,0 +1,3 @@
+1 hashing is one of the most important topics and concept , 
+2 this will include the hashmaps , ordered maps and unordered maps  ;
+3 so do this wisely 
