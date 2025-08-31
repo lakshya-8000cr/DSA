@@ -37,26 +37,24 @@ Node* Convert(vector<int> &arr){
 
 
 Node* DeleteNth(Node* Head , int n){
-    int count = 0;
-    int res = 0;
-    Node* temp = Head;
-    while(temp!=NULL){
-        count++;
-        temp = temp->Next;
+    Node* fast = Head;
+    for(int i=0; i<n; i++){
+        fast = fast->Next;
+    }
+    if(fast==NULL){
+        Node* newhead = Head->Next;
+        delete Head;
+        return newhead;
+    }
+    
+    Node* slow = Head;
+    while(fast->Next!=NULL){
+        slow = slow->Next;
+        fast = fast->Next;
     }
 
-    temp = Head;
-    res = count - n;
-    while(temp!=NULL){
-        res--;
-        if(res==0){
-            break;
-        }
-        temp = temp->Next;
-    }
-
-    Node* delnode = temp->Next;
-    temp->Next = temp->Next->Next;
+    Node* delnode = slow->Next;
+    slow->Next = slow->Next->Next;
     delete delnode;
 
     return Head;
