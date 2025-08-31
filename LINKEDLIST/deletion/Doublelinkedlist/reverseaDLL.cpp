@@ -39,15 +39,15 @@ Node* Convert(vector<int> &arr){
 }
 
 
-Node* Reversenodes(Node* Head){
-    Node* temp = Head;
+Node* Reverse(Node* Head){
+    Node* temp = Head ;
     Node* newHead = NULL;
-    while (temp!=NULL){
-         swap(temp->Next , temp->Back);
-         newHead = temp;
-         temp = temp->Back;
+    while(temp!=NULL){
+        swap(temp->Next , temp->Back);
+        newHead = temp ;
+        temp = temp->Back;
     }
-    
+
     return newHead;
 }
 
@@ -89,7 +89,7 @@ int main(){
     Print(Head);
     // Reverse(Head);
     // Print(Head);
-    Head = Reversenodes(Head);
+    Head = Reverse(Head);
     Print(Head);
     return 0;
 }

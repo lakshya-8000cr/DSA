@@ -1,0 +1,114 @@
+#include<iostream>
+#include<vector>
+
+using namespace std ;
+
+class Node {
+    public:
+    int data ;
+    Node* Next;
+
+    public:
+    Node(int data1 , Node* Next1){
+        data = data1;
+        Next = Next1;
+    }
+
+    public:
+    Node(int data1){
+        data = data1;
+        Next = nullptr;
+    }
+
+};
+
+Node* Convert(vector<int> &arr){
+    int n = arr.size();
+    Node* Head = new Node(arr[0]);
+    Node* Mover = Head;
+    for(int i=1; i<n; i++){
+        Node* temp = new Node(arr[i]);
+        Mover->Next = temp;
+        Mover = temp;
+    }
+
+    return Head;
+}
+
+
+Node* DeleteMiddle(Node* head){
+    vector<int>arr;
+        Node* temp = head;
+        if(head->Next==NULL){
+            return NULL;
+        }
+        while(temp!=NULL){
+            arr.push_back(temp->data);
+            temp = temp->Next;
+        }
+
+        temp = head;
+        int n = arr.size();
+        int mid = n / 2;
+
+        for (int i = mid; i < n-1; i++) {
+        arr[i] = arr[i + 1];
+        }
+  
+        n--;
+        int i = 0;
+        Node* prev = nullptr;
+
+        while(i<n){
+            temp->data = arr[i];
+            i++;
+            prev = temp;
+            temp = temp->Next;
+        }
+
+        if(prev!=NULL){
+            prev->Next = nullptr;
+        }
+
+        return head;
+}
+
+
+void Print(Node* Head){
+    Node* temp = Head;
+    while(temp!=NULL){
+        cout<<temp->data<<" ";
+        temp = temp->Next;
+    }
+}
+
+// int length(Node* Head){
+//     int count = 0;
+//     Node* temp = Head;
+
+//     while(temp!=nullptr){
+//          count++;
+//          temp = temp->Next;
+//     }
+
+//     return count;
+// }
+
+
+int main(){
+    vector<int>arr = {1 , 2 , 3 , 4 , 5 , 6};
+    Node* Head = Convert(arr);
+    // cout<<Head->data<<endl;
+    // cout<<Head->Next<<endl;
+    // int* ptr = &arr[1];
+    // cout<<ptr<<endl;
+
+    // cout<<length(Head);
+    // Head = Reverse(Head);
+    // Print(Head);
+    // Head = OddEven(Head);
+    // Print(Head);
+    Head = DeleteMiddle(Head);
+    Print(Head);
+    return 0;
+}
