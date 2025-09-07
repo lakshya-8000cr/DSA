@@ -11,7 +11,7 @@ class StackImplemen{
         st[top] = n;
     }
 
-    void pop(int n){
+    void pop(){
         if(top==-1){
             cout<<"empty stack:";
         }
@@ -37,6 +37,10 @@ int main(){
     obj.push(3);
     obj.push(4);
     obj.push(5);
+    obj.push(6);
 
+    // cout<<obj.Top();
+    obj.pop();
     cout<<obj.Top();
+    cout<<obj.size();
 }
