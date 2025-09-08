@@ -61,7 +61,7 @@ int main(){
     obj.push(1);
      obj.push(2);
       obj.push(3);
-       obj.push(4);
+       obj.push(4); 
 
        cout<<obj.TOP();
     obj.pop();

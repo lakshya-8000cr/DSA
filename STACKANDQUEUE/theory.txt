@@ -1,0 +1,4 @@
+we have implemented stack and queueu using the array ;
+now we will implement using LL ;
+But wait dont you have a question that Why are we using the linked list if we can do using the array?
+Ans = array are not dynamic they are size constant so we need something which can be dynamic and not size constant so we used th LL
