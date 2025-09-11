@@ -5,7 +5,7 @@ using namespace std;
 class valid {
 public:
     bool validparenthesis(string s) {
-        stack<char> St;  
+        stack<char> St;  cd
         int len = s.length();
 
         for (int i = 0; i < len; i++) {

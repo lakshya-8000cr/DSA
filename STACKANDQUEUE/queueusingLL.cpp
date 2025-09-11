@@ -1,11 +1,10 @@
-#include<vector>
 #include<iostream>
-using namespace std;
+#include<vector>
+using namespace std ;
 
-
-class Node{
+class Node {
     public:
-    int data ;
+    int data;
     Node* next;
 
     public:
@@ -20,34 +19,51 @@ class Node{
         next = NULL;
     }
 };
-class ST {
+
+class Q {
+
     public:
-    int size = 0;`
-    Node* Top = NULL;
+
+    int size = 0;
+    Node* start = NULL;
+    Node* end = NULL;
+
+    public:
 
     void push(int n){
-        Node* x = new Node(n);
-        x->next = Top;
-        Top = x;
-        size++;
+         Node* temp = new Node(n);
+         if(start == NULL){
+            start = end = temp;
+         }
+
+         else{
+            end->next = temp;
+            end = temp;
+         }
+
+         size++;
     }
 
+    public:
+
+
+
     void pop(){
-        Node* temp = Top;
-        Top = Top->next;
+        Node* temp = start;
+        start = start->next;
         delete temp;
         size--;
     }
 
-    int up(){
-        return Top->data;
+    int high(){
+        return start->data;
     }
 
     int length(){
         return size;
     }
-};
 
+};
 
 Node* Convert(vector<int>&arr){
     Node* head = new Node(arr[0]);
@@ -74,14 +90,11 @@ void Print(Node* Head){
 }
 
 int main(){
-    vector<int>arr = {1 , 2 , 3 , 4 , 5};
-    Node* head = Convert(arr);
-    Print(head);
-    ST obj;
-    obj.push(6);
-    obj.push(7);
-    obj.push(8);
-    cout<<obj.up();
-    obj.pop();
-    cout<<obj.up();
+    Q obj;
+    obj.push(1);
+    obj.push(4);
+    obj.push(5);
+   cout<< obj.high();
+   obj.pop();
+   cout<<obj.high();
 }
