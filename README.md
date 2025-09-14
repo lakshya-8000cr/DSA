@@ -40,4 +40,4 @@ It includes solutions, implementations, and revisions in **Java and C++** for va
 ## 📖 How to Use
 1. Clone this repo:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/lakshya-8000cr/DSA.git
